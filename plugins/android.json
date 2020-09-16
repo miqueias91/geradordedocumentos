@@ -1,0 +1,57 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-admob-sdk": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-clipboard": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-admob-free": {
+      "ADMOB_APP_ID": "ca-app-pub-7091486462236476~8482486521",
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-insomnia": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
+    }
+  },
+  "dependent_plugins": {}
+}
