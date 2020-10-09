@@ -2083,6 +2083,9 @@
           <div class="center"></div>
       </ons-toolbar>
       <main role="main" class="container">  
+      <ons-fab class="copiar" position="bottom right">
+        <ons-icon icon="md-copy"></ons-icon>
+      </ons-fab>
 
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
@@ -2109,17 +2112,23 @@
       ons.getScriptPage().onInit = function () {
         // admob.interstitial.show();
         this.querySelector('#gerar_cnh_ div.center').textContent = 'Gerador de CNH'; 
-
         $("#cnh_unico").val(app.gerarNumeroCNH());
         $('#btn_gerar_cnh').click(function(){
           $("#cnh_unico").val(app.gerarNumeroCNH());
-        });        
-        $('#cnh_unico').click(function(){
-          var text = $(this).val();
-          cordova.plugins.clipboard.copy(text);
-          cordova.plugins.clipboard.paste(function (text) { 
-            ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
-          });
+        });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $(this).val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
+            });
+          }
+          else{
+            ons.notification.toast('Campo está vazio.', { buttonLabel: 'Ok', timeout: 2000 });
+          }
         });
       }
     </script>
