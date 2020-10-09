@@ -7,7 +7,6 @@
 
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -19,7 +18,6 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery.mask.min.js"></script>
     <script src="./js/jquery.maskMoney.min.js"></script>
-    <script src="./js/jquery-ui.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
     <script type="text/javascript" src="lib/SocialSharing/SocialSharing.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
@@ -2119,8 +2117,9 @@
 
         var text = "";
         $('.copiar').click(function(){
-          text = $(this).val();
+          text = $("#cnh_unico").val();
           if (text != '') {
+            console.log(text)
             cordova.plugins.clipboard.copy(text);
             cordova.plugins.clipboard.paste(function (text) { 
               ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
