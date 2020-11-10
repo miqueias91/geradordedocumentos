@@ -41,14 +41,14 @@
 
         admob.banner.config({ 
           id: admobid.banner, 
-          isTesting: true, 
+          isTesting: false, 
           autoShow: true, 
         })
         admob.banner.prepare()
         
         admob.interstitial.config({
           id: admobid.interstitial,
-          isTesting: true,
+          isTesting: false,
           autoShow: false,
         })
         admob.interstitial.prepare()
@@ -1961,7 +1961,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_nomes_ div.center').textContent = 'Gerador de Nomes';        
         var sobrenome_unico1 = '';
         var sobrenome_unico2 = '';
@@ -2131,7 +2131,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_cnh_ div.center').textContent = 'Gerador de CNH'; 
         $("#cnh_unico").val(app.gerarNumeroCNH());
         $('#btn_gerar_cnh').click(function(){
@@ -2211,7 +2211,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_rg_ div.center').textContent = 'Gerador de RG';
         $('.rg').mask('99.999.999-9');
 
@@ -2293,7 +2293,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_tituloeleitor_ div.center').textContent = 'Gerador de Título de Eleitor';   
         $('.te').mask('9999 9999 9999');
 
@@ -2375,7 +2375,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_cpf_ div.center').textContent = 'Gerador de CPF';  
         $('.cpf').mask('999.999.999-99');
 
@@ -2456,7 +2456,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_pispasep_ div.center').textContent = 'Gerador de PIS/PASEP';   
         $('.pis_pasep').mask('999.99999.99-9');
 
@@ -2538,7 +2538,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_cnpj_ div.center').textContent = 'Gerador de CNPJ';
         $('.cnpj').mask('99.999.999/9999-99');
 
@@ -2597,7 +2597,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_carteiratrabalho_ div.center').textContent = 'Gerador de Carteira de Trabalho';        
       }
     </script>
@@ -2639,7 +2639,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_certidaonascimento_ div.center').textContent = 'Gerador de Certidão de Nascimento';        
       }
     </script>
@@ -2681,7 +2681,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_certidaocasamento_ div.center').textContent = 'Gerador de Certidão de Casamento';        
       }
     </script>
@@ -2723,7 +2723,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_certidaoobito_ div.center').textContent = 'Gerador de Certidão de Óbito';        
       }
     </script>
@@ -2765,7 +2765,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_endereco_ div.center').textContent = 'Gerador de Comprovante de Endereço';        
       }
     </script>
@@ -2807,7 +2807,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_atestadomedico_ div.center').textContent = 'Gerador de Atestado Médico';        
       }
     </script>
@@ -2849,7 +2849,7 @@
 
     <script>
       ons.getScriptPage().onInit = function () {
-        // admob.interstitial.show();
+        admob.interstitial.show();
         this.querySelector('#gerar_passaporte_ div.center').textContent = 'Gerador de Passaporte';        
       }
     </script>

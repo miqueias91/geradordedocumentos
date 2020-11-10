@@ -7,7 +7,6 @@
 
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -19,7 +18,6 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery.mask.min.js"></script>
     <script src="./js/jquery.maskMoney.min.js"></script>
-    <script src="./js/jquery-ui.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
     <script type="text/javascript" src="lib/SocialSharing/SocialSharing.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
@@ -106,7 +104,7 @@
       </div>
     </ons-toolbar>
     <ons-tabbar swipeable id="appTabbar" position="bottom">
-        <ons-tab label="Versão 1.0.0" page="home.html" active></ons-tab>
+        <ons-tab label="Versão 1.0.1" page="home.html" active></ons-tab>
     </ons-tabbar>
 
     <script>
@@ -276,7 +274,7 @@
 <template id="home.html">
   <ons-page>
     <br>
-    <p class="intro">Somos um <a href="http://www.geradoraleatorio.com.br/" target="_BLANK" style="color: #333!important"><b>site</b></a> gratuito que reúne diversas ferramentas online com o propósito de auxiliar programadores, analistas de sistemas e estudantes a testarem seus softwares de forma rápida e facil. Nossos números de documentos são todos validados.</p>
+    <p class="intro">Somos um app gratuito que reúne diversas ferramentas online com o propósito de auxiliar programadores, analistas de sistemas e estudantes a testarem seus softwares de forma rápida e facil. Nossos números de documentos são todos validados.</p>
 
 
 
@@ -561,6 +559,9 @@
             </fieldset>
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_pessoa">GERAR PESSOA</ons-button>
+            </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
             </div>
           </form>
         </div>
@@ -1895,7 +1896,10 @@
           </div>
           <div class="center"></div>
       </ons-toolbar>
-      <main role="main" class="container">  
+      <main role="main" class="container"> 
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab> 
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -1947,6 +1951,9 @@
 
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_nome">GERAR NOME</ons-button>
+            </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
             </div>
           </form>
         </div>
@@ -2048,6 +2055,17 @@
           nome_pessoa_unico = $(".nome_pessoa").val();
           $("#nome_titular_unico").val(nome_pessoa_unico+' '+sobrenome_unico);
         });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#nome_titular_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });
       }
     </script>
     <style>
@@ -2083,6 +2101,9 @@
           <div class="center"></div>
       </ons-toolbar>
       <main role="main" class="container">  
+      <ons-fab class="copiar" position="bottom right">
+        <ons-icon icon="md-copy"></ons-icon>
+      </ons-fab>
 
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
@@ -2101,6 +2122,9 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cnh">GERAR CNH</ons-button>
             </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
           </form>
         </div>
       </main><!-- /.container -->
@@ -2109,11 +2133,21 @@
       ons.getScriptPage().onInit = function () {
         admob.interstitial.show();
         this.querySelector('#gerar_cnh_ div.center').textContent = 'Gerador de CNH'; 
-
         $("#cnh_unico").val(app.gerarNumeroCNH());
         $('#btn_gerar_cnh').click(function(){
           $("#cnh_unico").val(app.gerarNumeroCNH());
-        });        
+        });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#cnh_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });
       }
     </script>
     <style>
@@ -2149,7 +2183,9 @@
           <div class="center"></div>
       </ons-toolbar>
       <main role="main" class="container">   
-
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab>
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -2166,6 +2202,9 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_rg">GERAR RG</ons-button>
             </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
           </form>
         </div>
       </main><!-- /.container -->
@@ -2180,6 +2219,17 @@
         $('#btn_gerar_rg').click(function(){
           $("#rg_unico").val(app.gerarNumeroRG());
         }); 
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#rg_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });   
       }
     </script>
     <style>
@@ -2215,7 +2265,9 @@
           <div class="center"></div>
       </ons-toolbar>
       <main role="main" class="container">   
-
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab>
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -2232,6 +2284,9 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_te">GERAR TÍTULO DE ELEITOR</ons-button>
             </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
           </form>
         </div>
       </main><!-- /.container -->
@@ -2245,7 +2300,18 @@
         $("#te_unico").val(app.gerarNumeroTituloEleitor());
         $('#btn_gerar_te').click(function(){
           $("#te_unico").val(app.gerarNumeroTituloEleitor());
-        });      
+        });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#te_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });   
       }
     </script>
     <style>
@@ -2281,7 +2347,9 @@
           <div class="center"></div>
       </ons-toolbar>
       <main role="main" class="container">   
-
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab>
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -2298,6 +2366,9 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cpf">GERAR CPF</ons-button>
             </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
           </form>
         </div>
       </main><!-- /.container -->
@@ -2311,7 +2382,17 @@
         $("#cpf_unico").val(app.gerarNumeroCPF());
         $('#btn_gerar_cpf').click(function(){
           $("#cpf_unico").val(app.gerarNumeroCPF());
-        });       
+        });  
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#cpf_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });     
       }
     </script>
     <style>
@@ -2347,7 +2428,9 @@
             <div class="center"></div>
         </ons-toolbar>
          <main role="main" class="container">   
-
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab>
         <div style="padding: 20px 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -2364,6 +2447,9 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_pispasep">GERAR PIS/PASEP</ons-button>
             </div>
+            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
           </form>
         </div>
       </main><!-- /.container -->
@@ -2377,7 +2463,18 @@
         $("#pis_pasep_unico").val(app.gerarNumeroPIS_PASEP());
         $('#btn_gerar_pispasep').click(function(){
           $("#pis_pasep_unico").val(app.gerarNumeroPIS_PASEP());
-        });     
+        });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#pis_pasep_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
+        });
       }
     </script>
     <style>
@@ -2413,7 +2510,9 @@
             <div class="center"></div>
         </ons-toolbar>
         <main role="main" class="container">   
-
+        <ons-fab class="copiar" position="bottom right">
+          <ons-icon icon="md-copy"></ons-icon>
+        </ons-fab>
           <div class="starter-template" id="dados" style="padding: 20px 1.5rem 3rem 1.5rem;">
             <form>
               <fieldset>
@@ -2430,6 +2529,9 @@
               <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cnpj">GERAR CNPJ</ons-button>
               </div>
+              <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
+                <p>Copiado para a área de transferência.</p>
+            </div>
             </form>
           </div>
         </main><!-- /.container -->
@@ -2443,6 +2545,17 @@
         $("#cnpj_unico").val(app.gerarNumeroCNPJ());
         $('#btn_gerar_cnpj').click(function(){
           $("#cnpj_unico").val(app.gerarNumeroCNPJ());
+        });
+
+        var text = "";
+        $('.copiar').click(function(){
+          text = $("#cnpj_unico").val();
+          if (text != '') {
+            cordova.plugins.clipboard.copy(text);
+            cordova.plugins.clipboard.paste(function (text) { 
+              $('.txt_copia').css('display','grid');
+            });
+          }          
         });
       }
     </script>

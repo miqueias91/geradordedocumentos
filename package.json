@@ -50,6 +50,8 @@
             "es6-promise-plugin": {},
             "phonegap-plugin-multidex": {}
         },
-        "platforms": []
+        "platforms": [
+            "android"
+        ]
     }
 }
