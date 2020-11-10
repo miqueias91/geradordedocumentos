@@ -41,14 +41,14 @@
 
         admob.banner.config({ 
           id: admobid.banner, 
-          isTesting: false, 
+          isTesting: true, 
           autoShow: true, 
         })
         admob.banner.prepare()
         
         admob.interstitial.config({
           id: admobid.interstitial,
-          isTesting: false,
+          isTesting: true,
           autoShow: false,
         })
         admob.interstitial.prepare()
@@ -2120,9 +2120,11 @@
           text = $("#cnh_unico").val();
           if (text != '') {
             console.log(text)
+            ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
             cordova.plugins.clipboard.copy(text);
             cordova.plugins.clipboard.paste(function (text) { 
-              ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
+              //ons.notification.toast('Copiado para a área de transferência.', { buttonLabel: 'Ok', timeout: 2000 });
+              ons.notification.toast('Copiado para a área de transferência.');
             });
           }
           else{
