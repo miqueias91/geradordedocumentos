@@ -584,14 +584,14 @@ var app = {
           '</div>'+
 
           '<div class="form-group col-md-6 falecido_filho'+i+'" style="display: none;">'+
-            '<label for="cidade_obito_filho'+i+'">&nbsp;</label>'+
+            '<label for="cidade_obito_filho'+i+'">Cidade do Falecimento</label>'+
             '<input type="text" class="form-control filho cidade_obito_filho" id="cidade_obito_filho'+i+'" placeholder="Cidade do Falecimento">'+
           '</div>'+
 
           '<div class="form-group col-md-3 falecido_filho'+i+'" style="display: none;">'+
-            '<label for="estado_obito_filho'+i+'">&nbsp;</label>'+
+            '<label for="estado_obito_filho'+i+'">Estado do Falecimento</label>'+
             '<select id="estado_obito_filho'+i+'" class="form-control filho estado_obito_filho">'+
-              '<option value="">Estado do Falecimento</option>'+
+              '<option value="">Selecione</option>'+
               '<option value="AC">Acre</option>'+
               '<option value="AL">Alagoas</option>'+
               '<option value="AP">Amapá</option>'+

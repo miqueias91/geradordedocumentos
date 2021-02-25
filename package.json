@@ -1,8 +1,8 @@
 {
     "name": "br.com.innovatesoft.geradordedocumentos",
-    "displayName": "geradordedocumentos",
-    "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "displayName": "Gerador de Documentos",
+    "version": "1.0.2",
+    "description": "Gerador de Documentos, gera pessoas, nome, RG, CPF, CEP, Endereço, Certidão de Casamento, Certidão de Obito, Título de Eleitor, Carteira de Trabalho, Passaporte, Atestado Médico.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,6 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-admob-sdk": "^0.24.1",
-        "cordova-android": "^8.1.0",
         "cordova-clipboard": "^1.3.0",
         "cordova-plugin-admob-free": "0.27.0",
         "cordova-plugin-console": "^1.0.7",
@@ -53,5 +52,8 @@
         "platforms": [
             "android"
         ]
+    },
+    "devDependencies": {
+        "cordova-android": "^9.0.0"
     }
 }

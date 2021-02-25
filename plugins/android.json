@@ -43,9 +43,6 @@
     "cordova-promise-polyfill": {
       "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
     },
-    "cordova-support-google-services": {
-      "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
-    },
     "es6-promise-plugin": {
       "PACKAGE_NAME": "br.com.innovatesoft.geradordedocumentos"
     },

@@ -85,7 +85,7 @@ ons-fab.fab--material{
     padding: 0 10px!important;
 }
 ons-fab.compartilhar, ons-fab.copiar {
-    background-color: #4682B4!important;
+    background-color: #333!important;
     color: #F5F5F5!important;
     opacity: 1!important;
 }

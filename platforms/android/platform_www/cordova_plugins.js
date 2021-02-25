@@ -97,7 +97,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.2.2",
     "es6-promise-plugin": "4.2.2",
     "cordova-plugin-x-socialsharing": "5.6.5",
-    "cordova-support-google-services": "1.4.1",
     "phonegap-plugin-multidex": "1.0.0"
   };
 });
